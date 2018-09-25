@@ -3,8 +3,7 @@
     $dbAcess=new Manager;
    	$bdd=$dbAcess->dbConnect();
    
-   	 //$req = $bdd->query("SELECT MAX(id) from comments");
-   	 //$res=$req->fetch();
+   	 
    	 $id=$_GET['id'];
    	 $idC=$_GET['idC'];
    

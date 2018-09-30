@@ -19,13 +19,30 @@ function confirmUpdate(){
         $post = $postManager->getPost($_GET['id']);   
         require('controller/update.php');                           
 }
+
 function notReadComment(){
 	$postManager = new PostManager();
     $post = $postManager->getPost($_GET['id']);
+    
     require('controller/notReadToRead.php');
 }
+
 function reported(){
     $postManager = new PostManager();
     $post = $postManager->getPost($_GET['id']);
     require('reported.php');
+}
+
+function deleteReportedComment(){
+    $postManager = new PostManager();
+    $post = $postManager->getPost($_GET['id']);
+    $comment= new CommentManager();
+    $cmt=$comment->getComments($_GET['id']);
+    require_once("controller/deleteReportedComment.php");
+}
+
+function reportedCommentsManager(){
+    $postManager = new PostManager();
+    $post = $postManager->getPost($_GET['id']);
+    require('controller/reportedCommentsManager.php');
 }

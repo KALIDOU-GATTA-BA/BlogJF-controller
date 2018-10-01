@@ -1,5 +1,5 @@
 <?php 
-	require_once("model/Manager.php");
+    require_once("model/Manager.php");
     $dbAcess=new Manager;
     $bdd=$dbAcess->dbConnect();
     $id=$_GET['id'];
